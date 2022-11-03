@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+:root {
+  --Font-Family: 'Open Sans', sans-serif;
+  --btn-bg-clr: #fb5607;
+  --bg-color: #f6fff8;
+  --text-color: #403d39;
+}
+
+body {
+  font-family: var(--Font-Family);
+  background-color: white;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.search-form {
+    width: 50%;
+    margin: 5rem auto;
+}
+
+.single-bus {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.all-buses {
+    text-align: center;
+}
+
+.personal-info-form {
+  width: 60%;
+  margin: auto;
+  margin-top: 5rem;
+}
