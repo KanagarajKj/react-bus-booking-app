@@ -23,7 +23,7 @@ li {
 :root {
   --Font-Family: 'Open Sans', sans-serif;
   --btn-bg-clr: #fb5607;
-  --bg-color: #f6fff8;
+  --bg-color: #d90429;
   --text-color: #403d39;
 }
 
@@ -37,29 +37,153 @@ img {
   height: auto;
 }
 
-.title {
-    text-align: center;
-    margin-top: 2rem;
+/* Home */
+
+.home-image img{
+  width: 20rem;
 }
 
-.search-form {
-    width: 50%;
-    margin: 5rem auto;
+.home-page {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.get-location {
+  background-color: var(--bg-color);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.form {
+  background-color: var(--bg-color);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.operator {
+  width: 100%;
+}
+
+.form-control input {
+  width: 100%;
+}
+
+/* .form-control {
+  margin-bottom: 1rem;
+} */
+
+/* .form-control label {
+  display: block;
+  font-weight: 700;
+} */
+
+/* .form-control input {
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--btn-bg-clr);
+} */
+
+.home-btn {
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  color: var(--bg-color);
+  font-weight: 700;
+}
+
+.card-one .img-cta img {
+  width: 100%;
+  height: 10rem;
+  border-radius: 50px;
+}
+
+
+.section-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding: 3rem;
+}
+
+.card-one {
+  background-color:#dad7cd ;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.title {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.view-seats-btn {
+  border: none;
+  background-color: #fb5607;
+  border-radius: 5px;
+  cursor: alias;
+  padding: 0.5rem;
+}
+
+.more-info {
+  color: black;
+    font-weight: 700;
+}
+
+.more-info:hover {
+  color: #dad7cd;
+}
+
+/* single-bus */
+
+.single-bus-img-cta {
+  width: 25rem;
+  border-radius: 15px;
+}
+
+.location {
+  color: #d90429;
 }
 
 .single-bus {
-    margin-top: 5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
+  width: 100%;
+  height: 100vh;
+  background-color: #edf6f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
 }
 
-.all-buses {
-    text-align: center;
+.seats {
+display: flex;
+gap: 2rem;
+align-items: center;
+justify-content: center;
+margin-bottom: 1rem;
 }
 
-.personal-info-form {
-  width: 60%;
-  margin: auto;
-  margin-top: 5rem;
+.select-seat label {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.available-seats {
+  margin-top: 3rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.checkbox {
+  width: 2rem;
+  height: 2rem;
 }

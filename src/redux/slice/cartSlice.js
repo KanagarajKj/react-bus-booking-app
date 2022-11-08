@@ -1,27 +1,28 @@
 import {createSlice} from '@reduxjs/toolkit'
+import busData from '../../busData';
 
 const initialState = {
-    currentLocation : null,
-}
+  busDetails: busData,
+  searchedLocation:'',
+};
 
-console.log(initialState.currentLocation);
-
+console.log(initialState.busDetails,'BUSES')
 const cartSlice = createSlice({
-  name: 'cart',
+  name: 'bus',
   initialState,
 
   reducers: {
-    userSearchedLocation: (state, action) => {
-      state.currentLocation = action.payload;
+    updateLocation: (state, action) => {
+      state.pickUpPoint = action.payload?.pickUpPoint;
+      state.droppingPoint = action.payload?.droppingPoint;
     },
-
-    busData: (state, action) => {
-      const { availableBus } = action.payload;
-      state.busDetails = availableBus;
+    busDetails: (state, action) => {
+      const {data} = action.payload;
+      state.busDetails = data;
     },
-  },
+  }, 
 });
 
-export const { userSearchedLocation } = cartSlice.actions;
+ export const { busDetails, updateLocation } = cartSlice.actions;
 
 export default cartSlice.reducer;
