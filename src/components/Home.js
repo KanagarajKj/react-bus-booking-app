@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { updateLocation } from '../redux/slice/cartSlice';
+// import { updateLocation } from '../redux/slice/cartSlice';
+import { locationSelection } from '../redux/slice/serviceAction';
+
+
 const Home = () => {
-  const [location, setLocation] = useState({
-    pickUpPoint: '',
-    droppingPoint: '',
-    date: '',
-  });
+
+const [pickupPoint, setpickupPoint] = useState('')
+const [droppingPoint, setDroppingPoint] = useState('')
+const [date, setDate] = useState('')
+
 
 const dispatch = useDispatch();
 const navigate = useNavigate();
 
-  const handelChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setLocation({ ...location, [name]: value });
+  const handleChange = (e) => {
+    if (e.target.name === 'pickupPoint') {
+      setpickupPoint(e.target.value);
+    } else if (e.target.name === 'droppingPoint') {
+      setDroppingPoint(e.target.value);
+    }else if(e.target.name === 'date') {
+      setDate(e.target.value)
+    }
   };
 
   // Show Error Message
@@ -28,41 +35,28 @@ const navigate = useNavigate();
 
   // const error = document.querySelectorAll('error')
 
-  const submitHandler = (e) => {
-    e.preventDefault();
+  const submitHandler = () => {
 
-    if (!location.pickUpPoint) {
-    //   showError(location.pickUpPoint, 'Enter Pickup Point');
-    // error.textContent = 'Enter Pickup Point';
-
-    console.log('Error')
-    } else if (!location.droppingPoint) {
-    //   showError(location.droppingPoint, 'Enter Dropping Point');
-        // error.textContent = 'Enter Pickup Point';
-        
-    console.log('Error');
-
-    } else if (!location.date) {
-    //   showError(location.date, 'Enter date');
-        // error.textContent = 'Enter Pickup Point';
-        
-    console.log('Error');
+    if (!pickupPoint || !droppingPoint || !date) {
+      alert('Enter All Values')
     } else {
-      console.log(location);
-      dispatch(updateLocation(location));
+      dispatch(
+        locationSelection({
+          pickupPoint: pickupPoint,
+          droppingPoint: droppingPoint,
+          date: date,
+        })
+      );
       navigate('./allBuses');
     }
 };
 
   return (
     <main className="home-page">
-      <div className="home-image">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-l-P54rj7wfQ88_HdTCV3zlf-U_9QQejhcA&usqp=CAU"
-          alt="bus-icon"
-        />
-      </div>
       <div className="get-location">
+        <div className="title">
+          <h2>Book Your Ticket</h2>
+        </div>
         <form action="#" className="form" onSubmit={submitHandler}>
           <div className="form-control">
             {/* <label htmlFor="from">From</label> */}
@@ -78,9 +72,9 @@ const navigate = useNavigate();
             <select
               id="select_page"
               className="operator"
-              value={location.pickUpPoint}
-              onChange={handelChange}
-              name="pickUpPoint"
+              value={pickupPoint}
+              onChange={handleChange}
+              name="pickupPoint"
             >
               <option value="">Pick Up Point</option>
               <option value="chennai">chennai</option>
@@ -97,8 +91,8 @@ const navigate = useNavigate();
             <select
               id="select_page"
               className="operator"
-              value={location.droppingPoint}
-              onChange={handelChange}
+              value={droppingPoint}
+              onChange={handleChange}
               name="droppingPoint"
             >
               <option value="">Dropping Point</option>
@@ -107,6 +101,7 @@ const navigate = useNavigate();
               <option value="kumuli">kumuli</option>
               <option value="coimbatore">coimbatore</option>
               <option value="Kerala">Kerala</option>
+              <option value="Theni">Theni</option>
             </select>
             <span className="error"></span>
           </div>
@@ -117,14 +112,16 @@ const navigate = useNavigate();
               placeholder="Date"
               id="date"
               name="date"
-              value={location.date}
-              onChange={handelChange}
+              value={date}
+              onChange={handleChange}
             />
             <span className="error"></span>
           </div>
-          <button type="submit" className="home-btn">
-            Search Buses
-          </button>
+          <div className="home-submit-btn-cta">
+            <button type="submit" className="home-btn">
+              Search Buses
+            </button>
+          </div>
         </form>
       </div>
     </main>

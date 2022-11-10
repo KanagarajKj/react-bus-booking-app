@@ -23,7 +23,7 @@ li {
 :root {
   --Font-Family: 'Open Sans', sans-serif;
   --btn-bg-clr: #fb5607;
-  --bg-color: #d90429;
+  --bg-color: #274c77;
   --text-color: #403d39;
 }
 
@@ -37,9 +37,36 @@ img {
   height: auto;
 }
 
+button {
+  cursor: pointer;
+}
+
+/* Navbar */
+
+.nav {
+  background-color: #274c77;
+  height: 5rem;
+}
+
+.nav-right {
+  float: right;
+}
+
+.nav-cta {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 /* Home */
 
-.home-image img{
+.home-image img {
   width: 20rem;
 }
 
@@ -48,7 +75,7 @@ img {
   flex-direction: row;
   gap: 5rem;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   justify-content: center;
   align-items: center;
 }
@@ -57,13 +84,14 @@ img {
   background-color: var(--bg-color);
   padding: 2rem;
   border-radius: 10px;
-  width: 100%;
+  width: 30rem;
+  margin: auto;
 }
 
 .form {
   background-color: var(--bg-color);
-  display: flex;
   gap: 0.5rem;
+
 }
 
 .operator {
@@ -74,30 +102,36 @@ img {
   width: 100%;
 }
 
-/* .form-control {
+.form-control {
   margin-bottom: 1rem;
-} */
+}
 
-/* .form-control label {
-  display: block;
-  font-weight: 700;
-} */
-
-/* .form-control input {
+.form-control select {
   padding: 0.5rem;
   width: 100%;
   border: none;
   border-bottom: 2px solid var(--btn-bg-clr);
-} */
+}
+
+.form-control input {
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--btn-bg-clr);
+}
 
 .home-btn {
   align-items: center;
-  padding: 0.3rem 0.5rem;
+  padding: 0.8rem 1rem;
   border-radius: 20px;
   border: none;
   outline: none;
   color: var(--bg-color);
   font-weight: 700;
+}
+
+.home-submit-btn-cta {
+  text-align: center;
 }
 
 .card-one .img-cta img {
@@ -106,7 +140,6 @@ img {
   border-radius: 50px;
 }
 
-
 .section-center {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -114,14 +147,19 @@ img {
 }
 
 .card-one {
-  background-color:#dad7cd ;
+  background-color: #dad7cd;
   margin: 1rem;
   padding: 1rem;
 }
 
 .title {
   text-align: center;
-  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.title h2 {
+    color: white;
+  font-weight: 700;
 }
 
 .view-seats-btn {
@@ -134,7 +172,7 @@ img {
 
 .more-info {
   color: black;
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .more-info:hover {
@@ -145,16 +183,19 @@ img {
 
 .single-bus-img-cta {
   width: 25rem;
+}
+
+.single-bus-img-cta img {
   border-radius: 15px;
 }
 
 .location {
-  color: #d90429;
+  color:#d90429;
 }
 
 .single-bus {
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   background-color: #edf6f9;
   display: flex;
   flex-direction: column;
@@ -163,11 +204,11 @@ img {
 }
 
 .seats {
-display: flex;
-gap: 2rem;
-align-items: center;
-justify-content: center;
-margin-bottom: 1rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .select-seat label {
@@ -177,7 +218,6 @@ margin-bottom: 1rem;
 }
 
 .available-seats {
-  margin-top: 3rem;
   background-color: white;
   padding: 2rem;
   border-radius: 10px;
@@ -186,4 +226,80 @@ margin-bottom: 1rem;
 .checkbox {
   width: 2rem;
   height: 2rem;
+}
+
+/* passenger-form */
+
+.passenger-form {
+  max-width: 30rem;
+  width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  background-color: #cce3de;
+  padding: 1.5rem;
+  border-radius: 20px;
+}
+
+.passenger-form-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.passenger-form-title h3 {
+    font-size: 2rem;
+  font-weight: 700;
+}
+
+.gender input {
+  display: inline;
+}
+
+.gender label {
+  display: inline;
+}
+
+.gender {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 1rem;
+}
+
+.passenger-btn {
+  text-align: center;
+}
+
+.passenger-booking-btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 15px;
+  background-color: #d90429;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.get-passenger-details {
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius:15px;
+  background-color: #d90429;
+  margin-top: 1rem;
+}
+
+.get-passenger-details .get-passenger-details-link {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.time {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.time p span {
+  color: #274c77;
+  font-weight: 500;
+  font-size: 1.2rem;
 }

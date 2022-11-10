@@ -1,24 +1,27 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import busData from '../busData';
 
-const BusDetails = () => {
+const Buses = () => {
 
-const {droppingPoint, pickupPoint, date} = useSelector((state)=> state.bus)
-console.log(droppingPoint)
-console.log(pickupPoint)
-console.log(date)
-
-const newBuses = busData.filter((bus)=> (bus.from === pickupPoint) )
-
-console.log(newBuses)
-
+    const { busDetails } = useSelector(
+      (state) => state.bus
+    );
   return (
     <div className="section-center">
-      {newBuses.map((product) => {
-        const { id, title, image, price, quantity, from, to , arrivalTime, deptTime} = product;
+      {busDetails.map((product) => {
+        const {
+          id,
+          title,
+          image,
+          price,
+          quantity,
+          from,
+          to,
+          arrivalTime,
+          deptTime,
+        } = product;
         return (
           <article key={id} className="card-one">
             <div className="img-cta">
@@ -48,4 +51,4 @@ console.log(newBuses)
   );
 }
 
-export default BusDetails
+export default Buses

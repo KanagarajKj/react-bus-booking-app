@@ -1,7 +1,7 @@
 
-// import  { busDetails, updateLocation } from './cartSlice';
+import  { busDetails, updateLocation } from './cartSlice';
 
-// import {cartSlice} from './cartSlice'
+import cartSlice from './cartSlice'
 
 // const{actions} = cartSlice;
 
@@ -9,6 +9,6 @@
 // dispatch(actions.busDetails(selectedOption));
 // };
 
-// export const locationSelection = (selectedOption) => (dispatch) => {
-//   dispatch(actions.updateLocation(selectedOption));
-// };
+export const locationSelection = (selectedOption) => (dispatch) => {
+  dispatch(updateLocation(selectedOption));
+};
