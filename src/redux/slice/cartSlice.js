@@ -40,7 +40,7 @@ const cartSlice = createSlice({
       state.selectedSeat= [];
       state.passengerDetails= null;
 },
-  },
+},
 });
 
 export const { updateLocation, updateBus, updatePassengerDetails, clearData } = cartSlice.actions;

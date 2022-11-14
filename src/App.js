@@ -15,11 +15,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/busDetails/:busID" element={<SingleBus />} />
           <Route path="/allBuses" element={<AllBuses />} />
-          <Route path="/passengerDetails" element={<PassengerDetails/>}/>
-          <Route path='/buses' element={<Buses/>} />
-          <Route path='/displayTicket' element={<DisplayTicket/>}/>
+          <Route path="/busDetails/:busID" element={<SingleBus />} />
+          <Route path="/passengerDetails" element={<PassengerDetails />} />
+          <Route path="/buses" element={<Buses />} />
+          <Route path="/displayTicket" element={<DisplayTicket />} />
         </Route>
       </Routes>
     </BrowserRouter>
