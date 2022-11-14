@@ -7,6 +7,7 @@ import SingleBus from './components/SingleBus';
 import SharedLayout from './components/SharedLayout';
 import PassengerDetails from './components/PassengerDetails';
 import Buses from './components/Buses';
+import DisplayTicket from './components/DisplayTicket';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/allBuses" element={<AllBuses />} />
           <Route path="/passengerDetails" element={<PassengerDetails/>}/>
           <Route path='/buses' element={<Buses/>} />
+          <Route path='/displayTicket' element={<DisplayTicket/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

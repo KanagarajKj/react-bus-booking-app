@@ -1,16 +1,16 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 import busData from '../../busData';
 
 const initialServiceState = {
   busDetails: busData,
-  pickupPoint:null,
-  droppingPoint:null,
-  date:null,
+  pickupPoint: null,
+  droppingPoint: null,
+  date: null,
+  selectedBus: null,
+  selectedSeat: [],
+  passengerDetails: null,
 };
 
-console.log(initialServiceState.pickupPoint,'PICKUP')
-console.log(initialServiceState.droppingPoint, 'DROP');
-console.log(initialServiceState.date, 'DATE');
 
 const cartSlice = createSlice({
   name: 'bus',
@@ -23,9 +23,26 @@ const cartSlice = createSlice({
       state.droppingPoint = droppingPoint;
       state.date = date;
     },
+    updateBus: (state, action) => {
+      const { selectedBus, selectedSeat } = action.payload;
+      state.selectedBus = selectedBus;
+      state.selectedSeat = selectedSeat;
+    },
+    updatePassengerDetails:(state,action) => {
+      // const {userData} = action.payload;
+      state.passengerDetails = action.payload;
+    },
+    clearData: (state) => {
+      state.pickupPoint = null;
+      state.droppingPoint= null;
+      state.date= null;
+      state.selectedBus= null;
+      state.selectedSeat= [];
+      state.passengerDetails= null;
+},
   },
 });
 
- export const { updateLocation } = cartSlice.actions;
+export const { updateLocation, updateBus, updatePassengerDetails, clearData } = cartSlice.actions;
 
 export default cartSlice.reducer;

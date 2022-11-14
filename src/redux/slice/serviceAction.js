@@ -1,7 +1,7 @@
 
-import  { busDetails, updateLocation } from './cartSlice';
+import { updateLocation, updateBus, updatePassengerDetails } from './cartSlice';
 
-import cartSlice from './cartSlice'
+// import cartSlice from './cartSlice'
 
 // const{actions} = cartSlice;
 
@@ -11,4 +11,12 @@ import cartSlice from './cartSlice'
 
 export const locationSelection = (selectedOption) => (dispatch) => {
   dispatch(updateLocation(selectedOption));
+};
+
+export const busSelection = (selectedOption) => (dispatch) => {
+  dispatch(updateBus(selectedOption));
+}
+
+export const passengersData = (selectedOption) => (dispatch) => {
+  dispatch(updatePassengerDetails(selectedOption));
 };
